@@ -5,16 +5,19 @@ This guide will help you set up and run the Revita Rogue project.
 ## Prerequisites
 
 ### Unity Requirements
+
 - **Unity Editor**: 2021.3 LTS or later
 - **Unity Hub**: For managing Unity versions
 - **Platform modules**: Windows, Mac, or Linux build support
 
 ### Development Tools
+
 - **Visual Studio** or **Visual Studio Code** with C# extensions
 - **Git** for version control
 - **Text editor** for documentation editing
 
 ### Hardware Requirements
+
 - **OS**: Windows 10+, macOS 10.15+, or Ubuntu 18.04+
 - **Memory**: 4GB RAM minimum (8GB recommended)
 - **Storage**: 5GB free space for project files
@@ -23,6 +26,7 @@ This guide will help you set up and run the Revita Rogue project.
 ## Project Setup
 
 ### 1. Download the Project
+
 ```bash
 # Clone the repository
 git clone https://github.com/your-repo/revita-rouge.git
@@ -30,13 +34,16 @@ cd revita-rouge
 ```
 
 ### 2. Unity Setup
+
 1. Open Unity Hub
 2. Click "Add" and select the project folder
 3. Ensure Unity 2021.3 LTS is installed
 4. Open the project (initial import may take several minutes)
 
 ### 3. Package Dependencies
+
 The project uses these Unity packages:
+
 - **Input System**: For player controls
 - **2D Animation**: For character animations
 - **2D Tilemap**: For world building
@@ -45,6 +52,7 @@ The project uses these Unity packages:
 Unity should automatically resolve these dependencies when opening the project.
 
 ### 4. Build Settings
+
 1. Go to **File > Build Settings**
 2. Select your target platform
 3. Click "Switch Platform" if needed
@@ -53,6 +61,7 @@ Unity should automatically resolve these dependencies when opening the project.
 ## Project Structure
 
 ### Core Directories
+
 ```
 revita-rouge/
 ├── Assets/                 # Unity project assets
@@ -63,6 +72,7 @@ revita-rouge/
 ```
 
 ### Code Organization
+
 ```
 Code/
 ├── Boss3Behaviour/         # Boss AI and behaviors
@@ -83,12 +93,14 @@ Code/
 ## Running the Game
 
 ### In Unity Editor
+
 1. Open the main scene (usually in Assets/Scenes/)
 2. Click the **Play** button in the Unity Editor
 3. Use keyboard controls or connect a gamepad
 4. Test all systems and features
 
 ### Building for Distribution
+
 1. **File > Build Settings**
 2. Select scenes to include
 3. Choose target platform
@@ -96,6 +108,7 @@ Code/
 5. Click **Build** or **Build and Run**
 
 ### Testing Builds
+
 1. Test on target platform
 2. Verify save/load functionality
 3. Check performance and stability
@@ -104,12 +117,14 @@ Code/
 ## Development Workflow
 
 ### Code Editing
+
 1. Open scripts in your preferred IDE
 2. Make changes and save
 3. Return to Unity (auto-compilation)
 4. Test changes in Play mode
 
 ### Version Control
+
 ```bash
 # Before making changes
 git pull origin main
@@ -121,6 +136,7 @@ git push origin main
 ```
 
 ### Debugging
+
 - Use Unity Console for error messages
 - Add Debug.Log() statements for troubleshooting
 - Use Unity Profiler for performance analysis
@@ -129,21 +145,25 @@ git push origin main
 ## Common Issues & Solutions
 
 ### Unity Won't Open Project
+
 - Ensure Unity version compatibility
 - Check for corrupted project files
 - Try opening with Unity Hub instead of direct file association
 
 ### Scripts Won't Compile
+
 - Check for syntax errors in the Console
 - Verify all required packages are installed
 - Clear Library folder and reimport if needed
 
 ### Build Errors
+
 - Check Player Settings for target platform
 - Ensure all scenes are added to Build Settings
 - Verify platform-specific settings are correct
 
 ### Performance Issues
+
 - Use Unity Profiler to identify bottlenecks
 - Optimize texture sizes and compression
 - Reduce draw calls with sprite atlasing
@@ -152,11 +172,13 @@ git push origin main
 ## Configuration Files
 
 ### Input Actions
+
 - Located in `Code/InputActions/`
 - Modify `Revita Rogue Final.inputactions` for control changes
 - Regenerate input classes after modifications
 
 ### Save Data
+
 - Save files stored in persistent data path
 - Location varies by platform:
   - **Windows**: `%USERPROFILE%/AppData/LocalLow/CompanyName/GameName/`
@@ -164,6 +186,7 @@ git push origin main
   - **Linux**: `~/.config/unity3d/CompanyName/GameName/`
 
 ### Game Settings
+
 - Modify variables in manager scripts
 - Use Unity Inspector for runtime adjustments
 - Consider ScriptableObjects for data-driven design
@@ -171,18 +194,21 @@ git push origin main
 ## Customization
 
 ### Adding New Items
+
 1. Create item data in ItemDatabase
 2. Add crafting recipes if needed
 3. Update inventory display logic
 4. Test item functionality
 
 ### Creating New Quests
+
 1. Create QuestInfoSO ScriptableObject
 2. Define quest steps and requirements
 3. Add to quest manager system
 4. Implement quest-specific logic
 
 ### Modifying Player Stats
+
 1. Adjust values in Player.cs
 2. Update UI displays accordingly
 3. Balance with game difficulty
@@ -191,6 +217,7 @@ git push origin main
 ## Testing Checklist
 
 ### Functional Testing
+
 - [ ] Player movement in all directions
 - [ ] Health and stamina systems
 - [ ] Inventory management
@@ -200,6 +227,7 @@ git push origin main
 - [ ] All input methods
 
 ### Performance Testing
+
 - [ ] Frame rate stability
 - [ ] Memory usage within limits
 - [ ] Loading times acceptable
@@ -207,6 +235,7 @@ git push origin main
 - [ ] Smooth animations
 
 ### Platform Testing
+
 - [ ] Keyboard controls
 - [ ] Gamepad support
 - [ ] Touch controls (if applicable)
@@ -216,6 +245,7 @@ git push origin main
 ## Deployment
 
 ### Preparing for Release
+
 1. Finalize all art assets
 2. Complete localization if applicable
 3. Optimize performance
@@ -223,6 +253,7 @@ git push origin main
 5. Prepare marketing materials
 
 ### Distribution Platforms
+
 - **Steam**: Use Unity Cloud Build or manual upload
 - **Itch.io**: Direct file upload
 - **Mobile**: Platform-specific stores

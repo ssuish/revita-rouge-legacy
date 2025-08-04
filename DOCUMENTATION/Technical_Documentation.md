@@ -3,6 +3,7 @@
 ## System Requirements
 
 ### Minimum Requirements
+
 - **Unity**: 2021.3 LTS or newer
 - **Platform**: Windows 10, macOS 10.15, Ubuntu 18.04
 - **Memory**: 4GB RAM
@@ -10,6 +11,7 @@
 - **Graphics**: DirectX 11 compatible
 
 ### Recommended Specifications
+
 - **Unity**: 2021.3 LTS with latest updates
 - **Platform**: Windows 11, macOS 12, Ubuntu 20.04
 - **Memory**: 8GB RAM or higher
@@ -21,19 +23,25 @@
 ### Design Patterns
 
 #### Singleton Pattern
+
 Core managers use singleton pattern for global access:
+
 - `InventoryController`: Manages all inventory operations
 - `CraftingManager`: Handles item crafting logic
 - `GameEventsManagerSO`: Central event distribution system
 
 #### Observer Pattern
+
 Event-driven architecture enables loose coupling:
+
 - Quest progression updates through events
 - UI refreshes on state changes
 - Audio triggers from gameplay events
 
 #### Component System
+
 Modular component design for flexibility:
+
 - Separate behavior scripts for different functionalities
 - Reusable components across different entity types
 - Easy debugging and maintenance
@@ -65,19 +73,23 @@ Save System
 ## Input System
 
 ### Unity Input System Implementation
+
 The game uses Unity's new Input System for flexible control mapping:
 
 #### Action Maps
+
 - **Player**: Movement, combat, interaction
 - **UI**: Menu navigation, inventory management
 - **Debug**: Development and testing functions
 
 #### Input Sources
+
 - **Keyboard**: WASD movement, hotkeys for actions
 - **Gamepad**: Analog stick movement, button mapping
 - **Touch**: Virtual controls for mobile platforms
 
 #### Custom Input Handling
+
 ```csharp
 private PlayerActionMap _inputActions;
 
@@ -99,9 +111,11 @@ private void Update()
 ## Save System Architecture
 
 ### Data Serialization
+
 The game uses JSON serialization for save data:
 
 #### Inventory Persistence
+
 ```csharp
 [System.Serializable]
 public class InventorySaveData
@@ -113,6 +127,7 @@ public class InventorySaveData
 ```
 
 #### Quest Progress Tracking
+
 ```csharp
 [System.Serializable]
 public class QuestSaveData
@@ -125,6 +140,7 @@ public class QuestSaveData
 ```
 
 ### File Management
+
 - **Location**: Platform-specific persistent data path
 - **Format**: JSON for readability and debugging
 - **Backup**: Automatic backup of save files
@@ -135,23 +151,28 @@ public class QuestSaveData
 ### Memory Management
 
 #### Object Pooling
+
 Implemented for frequently created/destroyed objects:
+
 - Projectiles use object pooling to reduce garbage collection
 - Audio sources are pooled for sound effects
 - UI elements are recycled where possible
 
 #### Efficient Updates
+
 - Movement calculations in `FixedUpdate` for physics consistency
 - UI updates only when values change to reduce overhead
 - Lazy loading for large data sets like item databases
 
 ### Rendering Optimization
+
 - Sprite atlasing for reduced draw calls
 - Efficient use of Unity's 2D renderer
 - Optimized texture compression settings
 - Level-of-detail system for distant objects
 
 ### Audio Optimization
+
 - Compressed audio formats for smaller file sizes
 - Audio source pooling for sound effects
 - Spatial audio calculations only when necessary
@@ -160,14 +181,17 @@ Implemented for frequently created/destroyed objects:
 ## Networking Considerations
 
 ### Current State
+
 The game is designed as a single-player experience but the architecture supports future multiplayer implementation:
 
 #### Separated Logic
+
 - Game logic separated from presentation
 - State management through events
 - Deterministic game systems
 
 #### Potential Multiplayer Features
+
 - Synchronized resource gathering
 - Shared quest progression
 - Cooperative combat system
@@ -176,11 +200,13 @@ The game is designed as a single-player experience but the architecture supports
 ## Security Considerations
 
 ### Save Data Protection
+
 - Basic save file validation
 - Checksum verification for critical data
 - Protection against simple save file tampering
 
 ### Anti-Cheat Measures
+
 - Server-side validation for multiplayer (future)
 - Reasonable bounds checking on player statistics
 - Protection against memory modification tools
@@ -188,12 +214,14 @@ The game is designed as a single-player experience but the architecture supports
 ## Debugging and Development Tools
 
 ### Debug Systems
+
 - Comprehensive logging throughout game systems
 - Visual debugging for AI pathfinding
 - Performance profiling hooks
 - Development-only debug UI
 
 ### Testing Framework
+
 - Unit tests for core game logic
 - Integration tests for system interactions
 - Automated testing for build validation
@@ -202,24 +230,28 @@ The game is designed as a single-player experience but the architecture supports
 ## Platform-Specific Considerations
 
 ### Windows
+
 - DirectX 11 graphics API
 - Windows-specific input handling
 - File system permissions
 - Registry settings for game configuration
 
 ### macOS
+
 - Metal graphics API support
 - macOS security permissions
 - App Store compliance considerations
 - Code signing requirements
 
 ### Linux
+
 - Vulkan graphics API compatibility
 - Package manager distribution
 - Desktop environment compatibility
 - Dependencies management
 
 ### Mobile (Future)
+
 - Touch input optimization
 - Battery usage optimization
 - App store requirements
@@ -228,12 +260,14 @@ The game is designed as a single-player experience but the architecture supports
 ## API Integration
 
 ### Unity Services
+
 - **Analytics**: Player behavior tracking
 - **Cloud Build**: Automated build system
 - **Multiplayer**: Future multiplayer implementation
 - **Remote Config**: Dynamic configuration management
 
 ### Third-Party Libraries
+
 - **JSON.NET**: Enhanced JSON serialization
 - **DOTween**: Animation and tweening system
 - **Audio Manager**: Advanced audio management
@@ -241,12 +275,14 @@ The game is designed as a single-player experience but the architecture supports
 ## Build Pipeline
 
 ### Automated Building
+
 - Continuous integration setup
 - Automated testing before builds
 - Platform-specific build configurations
 - Asset optimization during build
 
 ### Version Management
+
 - Semantic versioning system
 - Build number automation
 - Release branch management
@@ -255,12 +291,14 @@ The game is designed as a single-player experience but the architecture supports
 ## Monitoring and Analytics
 
 ### Performance Monitoring
+
 - Frame rate tracking
 - Memory usage monitoring
 - Load time measurements
 - Crash reporting system
 
 ### Player Analytics
+
 - Gameplay progression tracking
 - Feature usage statistics
 - Player retention metrics

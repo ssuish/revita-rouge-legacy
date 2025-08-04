@@ -1,6 +1,7 @@
 # Revita Rogue - A 2D Post-Apocalyptic Survival Game
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Game Features](#game-features)
 - [Gameplay Mechanics](#gameplay-mechanics)
@@ -18,6 +19,7 @@ Revita Rogue is a 2D post-apocalyptic survival game built with Unity. Players na
 ## Game Features
 
 ### Core Gameplay
+
 - **Post-Apocalyptic Setting**: Explore a dangerous wasteland filled with resources and enemies
 - **Survival Mechanics**: Manage health, stamina/hunger, and inventory
 - **Resource Gathering**: Collect dates, legumes, and salvage materials from dumps
@@ -26,6 +28,7 @@ Revita Rogue is a 2D post-apocalyptic survival game built with Unity. Players na
 - **Combat System**: Battle enemies and bosses using projectile weapons
 
 ### World Systems
+
 - **Day/Night Cycle**: Dynamic lighting system with streetlights and player flashlight
 - **Real-Time Clock**: In-game time tracking with save/load functionality
 - **Scene Management**: Multiple areas connected through waypoints and triggers
@@ -34,6 +37,7 @@ Revita Rogue is a 2D post-apocalyptic survival game built with Unity. Players na
 ## Gameplay Mechanics
 
 ### Player Systems
+
 - **Movement**: 8-directional movement with sprinting capability
 - **Health System**: Heart-based health with consumable healing items
 - **Stamina/Hunger**: Hunger bars that deplete during sprinting
@@ -42,12 +46,14 @@ Revita Rogue is a 2D post-apocalyptic survival game built with Unity. Players na
 - **Gathering**: Hold-to-gather system for collecting resources
 
 ### Combat
+
 - **Projectile-Based**: Launch snares and other projectiles at enemies
 - **Enemy AI**: Intelligent enemies with patrol patterns and chase behavior
 - **Boss Battles**: Multiple boss encounters with unique behaviors
 - **Damage System**: Health-based combat with death/respawn mechanics
 
 ### Progression
+
 - **Experience System**: Gain XP from gathering and combat (up to level 20)
 - **Quest Completion**: Story and daily quest systems
 - **Item Progression**: Craft better tools and consumables
@@ -58,29 +64,34 @@ Revita Rogue is a 2D post-apocalyptic survival game built with Unity. Players na
 ### Core Systems
 
 #### Player Controller (`Player.cs`)
+
 - Central player management class handling movement, combat, health, and interactions
 - Integrates with input system, inventory, and quest systems
 - Manages animations, audio, and UI interactions
 
 #### Inventory System
+
 - **InventoryController**: Manages item storage, saving/loading, and item usage
 - **Item Database**: Centralized item definitions and properties
 - **Crafting Manager**: Handles recipe validation and item creation
 - **Pickup System**: Automatic item collection with gathering mechanics
 
 #### Quest System
+
 - **Quest Manager**: Handles quest progression and state management
 - **Quest Data**: Scriptable objects defining quest parameters
 - **Daily Quests**: Time-based recurring objectives
 - **Quest UI**: Log and progression tracking interfaces
 
 #### World Systems
+
 - **WorldTime**: Real-time clock with day/night cycles
 - **Lighting System**: Dynamic light management for time of day
 - **Scene Management**: Level transitions and save state persistence
 - **Audio Management**: Context-aware sound effects and music
 
 ### Input System
+
 - Unity's New Input System with customizable controls
 - Support for keyboard, gamepad, and touch inputs
 - Action mapping for movement, combat, interaction, and UI
@@ -88,17 +99,20 @@ Revita Rogue is a 2D post-apocalyptic survival game built with Unity. Players na
 ## Installation & Setup
 
 ### Prerequisites
+
 - Unity 2021.3 LTS or later
 - Unity Input System package
 - Visual Studio or preferred C# IDE
 
 ### Setup Instructions
+
 1. Clone or download the repository
 2. Open the project in Unity
 3. Ensure all required packages are installed
 4. Build and run the project
 
 ### Project Structure
+
 ```
 Code/
 ├── Boss3Behaviour/          # Boss AI and behavior
@@ -119,6 +133,7 @@ Code/
 ## Controls
 
 ### Default Controls
+
 - **Movement**: WASD / Arrow Keys / Left Stick
 - **Sprint**: Hold Shift / Sprint Button / Right Trigger
 - **Gather**: Hold Space / Gather Button
@@ -131,6 +146,7 @@ Code/
 - **Inventory**: I Key / Inventory Button
 
 ### Mobile Controls
+
 - Virtual joystick for movement
 - On-screen buttons for actions
 - Touch-friendly UI elements
@@ -138,23 +154,27 @@ Code/
 ## Game Systems
 
 ### Resource Management
+
 - **Health**: Managed through consumable items and combat damage
 - **Stamina/Hunger**: Depletes during sprinting, restored with food items
 - **Inventory Space**: Limited slots requiring strategic item management
 
 ### Progression Systems
+
 - **Experience Points**: Gained from gathering (5-10 XP per item)
 - **Level Cap**: Maximum level 20
 - **Death Penalty**: Inventory clearing and respawn at base
 - **Save System**: Persistent progress across play sessions
 
 ### World Interaction
+
 - **Gathering Points**: Dates, legumes, and dump sites
 - **NPCs**: Dialogue and quest interactions
 - **Environmental Objects**: Chests, switches, and interactive elements
 - **Scene Transitions**: Waypoint-based area traversal
 
 ### Enemy Types
+
 - **Basic Enemies**: Patrol-based AI with chase behavior
 - **Boss Enemies**: Seitune (Boss 2) and Hara (Boss 3)
 - **Combat Mechanics**: Projectile-based combat system
@@ -163,6 +183,7 @@ Code/
 ## Development Information
 
 ### Technical Details
+
 - **Engine**: Unity 2021.3 LTS
 - **Language**: C#
 - **Input System**: Unity Input System
@@ -171,19 +192,23 @@ Code/
 - **Graphics**: 2D sprite-based rendering
 
 ### Code Architecture
+
 - **Singleton Patterns**: Used for managers (InventoryController, etc.)
 - **Event System**: Centralized event management through GameEventsManagerSO
 - **Scriptable Objects**: Data-driven design for items, quests, and configuration
 - **Component-Based**: Modular systems with clear separation of concerns
 
 ### Performance Considerations
+
 - Object pooling for projectiles and effects
 - Efficient inventory management with lazy loading
 - Optimized lighting system for day/night cycles
 - Memory-conscious save/load operations
 
 ### Future Development
+
 The codebase is structured to support:
+
 - Additional boss encounters
 - Extended crafting recipes
 - New resource types and gathering mechanics
@@ -198,5 +223,4 @@ This code is provided for educational and reference purposes only. See the LICEN
 
 ---
 
-*This documentation reflects the current state of the Revita Rogue codebase as of August 2025.*
-
+_This documentation reflects the current state of the Revita Rogue codebase as of August 2025._
