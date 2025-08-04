@@ -16,6 +16,10 @@
 
 Revita Rogue is a 2D post-apocalyptic survival game built with Unity. Players navigate a dangerous wasteland, collecting resources, crafting items, completing quests, and battling enemies while managing health, stamina, and hunger systems. The game features day/night cycles, an inventory system, quest mechanics, and boss battles.
 
+You can play this game at <a href="https://kofeejan.itch.io/revita-rogue-capstone-project-showcase"><img src="https://img.shields.io/badge/Play_on_Itch-F85A5A"></a></a>.
+
+Watch Revita Rogue's short gameplay at: <a href="https://drive.google.com/file/d/1Zdr1VPkYVe_WQVV2_kFwQjeICcE6mVRa/view?usp=sharing"><img src="https://img.shields.io/badge/YouTube-F85A5A"></a></a>.
+
 ## Game Features
 
 ### Core Gameplay
