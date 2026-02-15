@@ -411,13 +411,13 @@ graph TD
         PS_Health[Health: 0-MaxHealth]
         PS_Stamina[Stamina: 0-MaxStamina]
         PS_Position[Position: Vector2]
-        PS_Inventory[Inventory: Item[]]
+        PS_Inventory["Inventory: Item[]"]
     end
     
     subgraph "Progression State"
         Prog_XP[Experience: int]
         Prog_Level[Level: 1-20]
-        Prog_Quests[Active Quests: Quest[]]
+        Prog_Quests["Active Quests: Quest[]"]
     end
     
     subgraph "World State"
