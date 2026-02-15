@@ -1,4 +1,4 @@
-# Revita Rogue - A 2D Post-Apocalyptic Survival Game
+# Revita Rogue - A 2D Post-Apocalyptic Survival Game [Legacy]
 
 ## Table of Contents
 
