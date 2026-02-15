@@ -247,7 +247,7 @@ graph LR
   - `SaveLoadManager.cs` - Elapsed time only
   - `InventoryController.cs` - Inventory to text file
   - `Leveling.cs` - XP/Level to PlayerPrefs
-  - `QuestManager.cs` - Quest state (unclear persistence)
+  - `QuestManager.cs` - Quest state to PlayerPrefs (JSON)
 - **Issues:**
   - No transaction safety
   - Data loss on crash (OnApplicationQuit saves)
@@ -454,23 +454,23 @@ graph TD
     subgraph "Persistence"
         File_Inv[Maininventory.txt]
         File_Level[PlayerPrefs]
-        File_Quest[In-Memory Only?]
+        File_Quest[PlayerPrefs - JSON]
         File_Time[savefile.json]
     end
     
     PS_Inventory -.Save.-> File_Inv
     Prog_Level -.Save.-> File_Level
-    Prog_Quests -.Save?.- File_Quest
+    Prog_Quests -.Save.-> File_Quest
     World_Time -.Save.-> File_Time
     
     File_Inv -.Load.-> PS_Inventory
     File_Level -.Load.-> Prog_Level
-    File_Quest -.Load?.- Prog_Quests
+    File_Quest -.Load.-> Prog_Quests
     File_Time -.Load.-> World_Time
     
     style File_Inv fill:#fcc,stroke:#333
     style File_Level fill:#fcc,stroke:#333
-    style File_Quest fill:#faa,stroke:#333,stroke-dasharray: 5 5
+    style File_Quest fill:#fcc,stroke:#333
     style File_Time fill:#fcc,stroke:#333
 ```
 
@@ -483,7 +483,7 @@ graph TD
 | **Player Position** | Player.cs Transform | Input system | Scene-specific | On scene load |
 | **Inventory Items** | InventoryController.cs | Pickup, drop, craft, quest rewards | `Maininventory.txt` | On app start |
 | **Player XP/Level** | Leveling.cs | Combat, gathering, quests | PlayerPrefs or file | On app start |
-| **Active Quests** | QuestManager.cs | Quest events (start, progress, complete) | **Unclear** | On scene load |
+| **Active Quests** | QuestManager.cs | Quest events (start, progress, complete) | PlayerPrefs (JSON) | On scene load |
 | **World Time** | WorldTime.cs | Real-time API, coroutine updates | `savefile.json` (elapsed only) | On app start |
 | **Scene Progression** | SceneProgressionManager.cs | Scene transitions | SceneData (static) | On demand |
 | **Crafting Recipes** | CraftingManager.cs | Designer-defined (SO) | Not persisted (static data) | On scene load |
@@ -558,20 +558,13 @@ QuestManager.Update() → Check Quest Timers →
 - Player XP and level
 - Elapsed world time
 - Scene progression (via static class)
+- Quest progress and state (via PlayerPrefs)
 
 ❌ **Not Persisted (Resets):**
 - Player health/stamina
 - Enemy states and positions
 - Resource spawn states
-- Quest progress (unclear/incomplete)
 - Player position in scene
-
-#### Critical Issue: Quest Persistence
-**Status:** INCOMPLETE
-- QuestManager has `QuestStepState[]` structure
-- No clear save/load methods found for quest state
-- Quest progress may reset on app restart
-- **Recommendation:** Implement `SaveQuestProgress()` and `LoadQuestProgress()` methods
 
 ---
 
@@ -584,8 +577,8 @@ QuestManager.Update() → Check Quest Timers →
 
 ### Short-Term Actions (P1)
 4. **Resolve Cyclic Dependencies** → Use interfaces and dependency inversion
-5. **Implement Quest Persistence** → Complete save/load for quest state
-6. **Add Null Safety** → Defensive coding and null checks
+5. **Add Null Safety** → Defensive coding and null checks
+6. **Improve Save System Consistency** → Standardize format across all persistence systems
 
 ### Long-Term Actions (P2-P3)
 7. **Event Bus Optimization** → Priority queuing for events
