@@ -10,6 +10,7 @@
 - [Controls](#controls)
 - [Game Systems](#game-systems)
 - [Development Information](#development-information)
+- [Documentation](#documentation)
 - [License](#license)
 
 ## Overview
@@ -218,6 +219,18 @@ The codebase is structured to support:
 - New resource types and gathering mechanics
 - Enhanced quest system with branching narratives
 - Multiplayer functionality (with architectural modifications)
+
+## Documentation
+
+For detailed technical documentation and analysis, see the [`docs/`](docs/) directory:
+
+- **[System Analysis](docs/System%20Analysis.md)** - Comprehensive As-Is analysis of the codebase including:
+  - System decomposition and architecture diagrams
+  - Codebase health assessment and technical debt analysis
+  - State and data flow documentation
+  - Dependency analysis and risk assessment
+
+This documentation provides insights into the game's architecture, identifies areas for improvement, and serves as a reference for understanding the system design.
 
 ## License
 
